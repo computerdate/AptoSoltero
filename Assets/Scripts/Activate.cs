@@ -11,8 +11,8 @@ public class Activate : MonoBehaviour
     private bool isObjectPicked = false;
     private PlayerController playerControllerScript;
     // The object is moving up and down until the player picks. 
-    public float speed = 0.1f;
-    public float amount = 0.05f;
+    private float speed = 5f;
+    private float amount = 0.0012f;
 
     void Start()
     {
