@@ -7,12 +7,20 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
-    public float timer = 100;
+    private int totalTime = 100;
+    private int alertTime = 10;
+    private int gameOverTime = 0;
+    public float timer;
     public Text textoTimer;
-    private bool colorChanged = false;
+    private bool colorChanged = false;  
     private bool gameEnded = false;
 
+
     public GameObject gameOverPanel;
+
+    void Start() {
+        timer = totalTime;
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,13 +28,13 @@ public class Timer : MonoBehaviour
         timer -= Time.deltaTime;
         textoTimer.text = "" + timer.ToString("f1");
         
-        if (timer <= 90 && !colorChanged)
+        if (timer <= alertTime && !colorChanged)
         {
             textoTimer.color = Color.red;
             colorChanged = true;
         }
 
-        if (timer <= 88 && !gameEnded)
+        if (timer <= gameOverTime && !gameEnded)
         {
             Time.timeScale = 0; // detener el tiempo del juego
             gameEnded = true;
@@ -41,7 +49,7 @@ public class Timer : MonoBehaviour
         SceneManager.LoadScene(currentScene.name);
 
         // Reinicia el valor de timer
-        timer = 100;
+        timer = totalTime;
 
         // Activa el panel de game over
         gameOverPanel.SetActive(false);
@@ -56,7 +64,7 @@ public class Timer : MonoBehaviour
 
     public void RestartGameButton()
     {
-        // Llama al método RestartGame en el objeto Timer
+        // Llama al metodo RestartGame en el objeto Timer
         FindObjectOfType<Timer>().RestartGame();
     }
 }

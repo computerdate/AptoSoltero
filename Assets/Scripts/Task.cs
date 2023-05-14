@@ -14,15 +14,13 @@ public class Task
         this.name = name;
         this.prop = prop;
         this.target = target;
-/*         this.started = false;
-        this.done = false; */
     }
 
-/*     public void startTask() {
+    public void startTask() {
         this.started = true;
     }
 
     public void finishTask() {
         this.done = true;
-    } */
+    }
 }
