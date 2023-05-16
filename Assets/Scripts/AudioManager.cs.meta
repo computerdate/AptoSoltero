@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 728c4848c9c7651479ff56eab1a29cac
+guid: 87352b946b9369742b24e9e018902514
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - pickupSound: {fileID: 8300000, guid: 06f8fb98799ed9f4e8aa7a387cdc7a83, type: 3}
-  - putDownSound: {fileID: 8300000, guid: 38e165d3943b3154da1f923ef9216132, type: 3}
-  - wrongStepSound: {fileID: 8300000, guid: 701639cae587a314a9c084fe4f5d0671, type: 3}
-  - applauseSound: {fileID: 8300000, guid: 65e9521ab9c5aca42b9ace020a8399aa, type: 3}
+  - pickupSound: {fileID: 8300000, guid: 94da8dc9b8522304095d0fb4e836f91d, type: 3}
+  - putDownSound: {fileID: 8300000, guid: 93dc7d740373c9e40821d019b795c7d6, type: 3}
+  - wrongStepSound: {fileID: 8300000, guid: 1ed54b82d5078664b84a4fe3d4f8677a, type: 3}
+  - applauseSound: {fileID: 8300000, guid: f7312e69d7c7c4f40ae7c0fdc9ed5ef9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

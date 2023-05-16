@@ -26,8 +26,8 @@ public class AudioManager : MonoBehaviour
     }
 
     public void playPickUpSound() {
-        audioSource.PlayOneShot(pickupSound, 1.0f);
         Debug.Log("Suena!");
+        audioSource.PlayOneShot(pickupSound, 1.0f);
     }
 
     public void playPutDownSound() {

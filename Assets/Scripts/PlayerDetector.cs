@@ -6,7 +6,7 @@ public class PlayerDetector : MonoBehaviour
 {
     public GameObject player;    
     private PlayerController playerController;
-    private float detectionDistance = 0.6f;
+    private float detectionDistance = 0.6f; 
     public bool isPlayerClose;
     public bool isObjectPicked;
     public float playerHeadYPosition = 3;
