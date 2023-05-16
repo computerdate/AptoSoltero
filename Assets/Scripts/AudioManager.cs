@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
         } else {
             Instance = this;
         }       
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     void Start() {
@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
 
     public void playPickUpSound() {
         audioSource.PlayOneShot(pickupSound, 1.0f);
+        Debug.Log("Suena!");
     }
 
     public void playPutDownSound() {

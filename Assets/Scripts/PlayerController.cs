@@ -68,19 +68,23 @@ public class PlayerController : MonoBehaviour
 
     public void selectObject() {
         string message;
+
         if (focusedObject.tag == "Prop" && !hasAnObject) {
-            AudioManager.Instance.playPickUpSound();            
+/*             AudioManager.Instance.playPickUpSound();            
             hasAnObject = true;
             pickedObject = focusedObject;
             playerDetector = pickedObject.GetComponent<PlayerDetector>();
             playerDetector.attachedToPlayer();        
-            toDo.startTaskByProp(pickedObject);
+            toDo.startTaskByProp(pickedObject); */
             message = "Object picked up: " + focusedObject.name;
+            pickUpObject();
+
         } else if (focusedObject.tag == "Prop" && hasAnObject) {
             message = "Already has an object.";
+
         } else if (focusedObject.tag == "Appliance" && hasAnObject) {
             message = "Let's see if the task is finished";
-            if (toDo.verifyTask(pickedObject, focusedObject)) {
+/*             if (toDo.verifyTask(pickedObject, focusedObject)) {
                 AudioManager.Instance.playPutDownSound();                
                 hasAnObject = false;
                 playerDetector.detachedFromPlayer();
@@ -91,41 +95,48 @@ public class PlayerController : MonoBehaviour
                 };                
             } else {
                 AudioManager.Instance.playErrorSound();                 
-            }      
+            } */
+            completeTask();
+
         } else if (focusedObject.tag == "Appliance" && !hasAnObject) {            
             message = "Go for an object";
+
         } else {
             message = "There is no focused object";
         }
-        Debug.Log(message);     
+        Debug.Log(message);
     }
 
-/*     public void pickUpObject() {
-        AudioManager.Instance.playPickUpSound();
+    public void pickUpObject() {
+        AudioManager.Instance.playPickUpSound();            
         hasAnObject = true;
         pickedObject = focusedObject;
         playerDetector = pickedObject.GetComponent<PlayerDetector>();
         playerDetector.attachedToPlayer();        
         toDo.startTaskByProp(pickedObject);
-    } */
+    }
 
-/*     public void completeTask() {
+    public void completeTask() {
         if (toDo.verifyTask(pickedObject, focusedObject)) {
-            AudioManager.Instance.playPutDownSound();
+            AudioManager.Instance.playPutDownSound();                
             hasAnObject = false;
             playerDetector.detachedFromPlayer();
             playerDetector.destroyObject();
-            checkMissionCompleted();            
+/*             if (toDo.verifyToDoListComplete()) {
+                Debug.Log("Mission completed!");
+                AudioManager.Instance.playApplauseSound();                     
+            }; */
+            ckeckMissionCompleted();
         } else {
-            AudioManager.Instance.playErrorSound(); 
-        }  
-    } */
+            AudioManager.Instance.playErrorSound();                 
+        }
+    }
 
-/*     public void ckeckMissionCompleted() {
+    public void ckeckMissionCompleted() {
         if (toDo.verifyToDoListComplete()) {
             Debug.Log("Mission completed!");
-            AudioManager.Instance.playApplauseSound();                 
-        };    
-    } */
+            AudioManager.Instance.playApplauseSound();                     
+        };     
+    }
 
 }

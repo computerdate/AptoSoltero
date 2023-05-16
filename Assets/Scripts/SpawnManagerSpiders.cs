@@ -13,16 +13,11 @@ public class SpawnManagerSpiders : MonoBehaviour
     private float startDelay = 1;
     private float spawnInterval = 0.1f;
 
-    // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     void SpawnRandomAnimal() {
 
